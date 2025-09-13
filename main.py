@@ -27,19 +27,14 @@ class MiTerminal(cmd.Cmd):
 
 # Comando SALIR
     def do_salir(self, arg):
-        """Cierra la terminal."""
         print(Fore.CYAN + "Adiós!")
         return True
 
-    # --- Extras ---
     def emptyline(self):
-        """Evita repetir el último comando si das ENTER vacío."""
         pass
 
     def default(self, line):
-        """Muestra un error si el comando no existe."""
         print(Fore.RED + f"Comando desconocido: {line}")
 
-# Ejecutar el intérprete
 if __name__ == "__main__":
     MiTerminal().cmdloop()
