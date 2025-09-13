@@ -17,3 +17,17 @@ def cls(arg):
 def salir(arg):
     print(Fore.CYAN + "Adiós!")
     return True
+
+def help(self, arg):
+    if arg:
+        cmd, *rest = arg.split()
+        if hasattr(self, "do_" + cmd):
+            print(getattr(self, "do_" + cmd).__doc__)
+        else:
+            print(f"No hay ayuda disponible para {cmd}")
+    else:
+        print("Comandos disponibles:")
+        print("  hola   - Muestra un saludo")
+        print("  sumar  - Suma dos números")
+        print("  cls    - Limpia la pantalla")
+        print("  salir  - Sale de la terminal")

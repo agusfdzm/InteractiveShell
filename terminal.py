@@ -25,3 +25,5 @@ class MiTerminal(cmd.Cmd):
 
     def default(self, line):
         print(Fore.RED + f"Comando desconocido: {line}")
+
+ 
